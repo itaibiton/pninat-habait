@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-primary: #19b4b5;
+  --color-primary-light: #7ba8ad;
+  --color-accent-orange: #ed7b15;
+  --color-accent-coral: #ff6139;
+
+  /* Typography */
+  --font-family-rubik: var(--font-rubik), "Rubik", sans-serif;
+
+  /* Spacing adjustments for Hebrew typography */
+  --line-height-hebrew: 1.75;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-family-rubik);
+    line-height: var(--line-height-hebrew);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* RTL Support Enhancements */
+  [dir="rtl"] {
+    text-align: start;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-light);
+  }
+
+  /* Image loading optimization */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
